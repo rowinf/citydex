@@ -1,0 +1,87 @@
+<div id="<%= dom_id sunshine_hour %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Country:</strong>
+    <%= sunshine_hour.country %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">City:</strong>
+    <%= sunshine_hour.city %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Jan:</strong>
+    <%= sunshine_hour.jan %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Feb:</strong>
+    <%= sunshine_hour.feb %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Mar:</strong>
+    <%= sunshine_hour.mar %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Apr:</strong>
+    <%= sunshine_hour.apr %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">May:</strong>
+    <%= sunshine_hour.may %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Jun:</strong>
+    <%= sunshine_hour.jun %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Jul:</strong>
+    <%= sunshine_hour.jul %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Aug:</strong>
+    <%= sunshine_hour.aug %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Sep:</strong>
+    <%= sunshine_hour.sep %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Oct:</strong>
+    <%= sunshine_hour.oct %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nov:</strong>
+    <%= sunshine_hour.nov %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Dec:</strong>
+    <%= sunshine_hour.dec %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Year:</strong>
+    <%= sunshine_hour.year %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Ref:</strong>
+    <%= sunshine_hour.ref %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this sunshine hour", sunshine_hour, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this sunshine hour", edit_sunshine_hour_path(sunshine_hour), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

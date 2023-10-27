@@ -1,0 +1,2 @@
+module SunshineHoursHelper
+end
