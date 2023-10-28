@@ -4,10 +4,11 @@ class SunshineHoursController < ApplicationController
   # GET /sunshine_hours or /sunshine_hours.json
   def index
     @countries = SunshineHour.select(:country).distinct.order('country ASC').pluck(:country)
+
     if params[:country].present?
-      @sunshine_hours = SunshineHour.index_query(params[:country])
+      @sunshine_hours = SunshineHour.index_query(params[:country], params.fetch(:page, 1))
     else
-      @sunshine_hours = SunshineHour.index_query('United States')
+      @sunshine_hours = SunshineHour.index_query('United States', params.fetch(:page, 1))
     end
   end
 

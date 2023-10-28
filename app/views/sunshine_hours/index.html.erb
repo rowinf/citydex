@@ -12,4 +12,5 @@
   <div id="sunshine_hours" class="min-w-full border-red-900 border-2 border-solid">
     <%= render partial: "sunshine_hour_link", collection: @sunshine_hours %>
   </div>
+  <%= paginate @sunshine_hours %>
 </div>

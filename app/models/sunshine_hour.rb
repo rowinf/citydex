@@ -1,3 +1,3 @@
 class SunshineHour < ApplicationRecord
-  scope :index_query, ->(country){ where(country: country).order(city: :asc).take(10) }
+  scope :index_query, ->(country, page){ where(country: country).order(city: :asc).page(page) }
 end
