@@ -3,7 +3,12 @@ class SunshineHoursController < ApplicationController
 
   # GET /sunshine_hours or /sunshine_hours.json
   def index
-    @sunshine_hours = SunshineHour.all
+    @countries = SunshineHour.select(:country).distinct.order('country ASC').pluck(:country)
+    if params[:country].present?
+      @sunshine_hours = SunshineHour.index_query(params[:country])
+    else
+      @sunshine_hours = SunshineHour.index_query('United States')
+    end
   end
 
   # GET /sunshine_hours/1 or /sunshine_hours/1.json

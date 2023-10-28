@@ -4,11 +4,12 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Sunshine hours</h1>
     <%= link_to "New sunshine hour", new_sunshine_hour_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl">Sunshine hours</h1>
   </div>
+  <%= render partial: "country_select", object: @countries %>
 
-  <div id="sunshine_hours" class="min-w-full">
-    <%= render @sunshine_hours %>
+  <div id="sunshine_hours" class="min-w-full border-red-900 border-2 border-solid">
+    <%= render partial: "sunshine_hour_link", collection: @sunshine_hours %>
   </div>
 </div>

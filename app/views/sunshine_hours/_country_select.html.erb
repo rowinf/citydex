@@ -1,0 +1,5 @@
+<%= form_with url: sunshine_hours_url, method: :get do |form| %>
+  <%= form.label :country, "Select country:" %>
+  <%= form.select :country, @countries, selected: params[:country] %>
+  <%= form.submit "Filter" %>
+<% end %>
