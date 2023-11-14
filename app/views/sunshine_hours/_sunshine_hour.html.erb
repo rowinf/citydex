@@ -1,84 +1,16 @@
 <div id="<%= dom_id sunshine_hour %>" class="border-2 border-dashed border-red-400">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Country:</strong>
-    <%= sunshine_hour.country %>
+    <%= sunshine_hour.city %>, <%= sunshine_hour.country %>
   </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">City:</strong>
-    <%= sunshine_hour.city %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Jan:</strong>
-    <%= sunshine_hour.jan %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Feb:</strong>
-    <%= sunshine_hour.feb %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Mar:</strong>
-    <%= sunshine_hour.mar %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Apr:</strong>
-    <%= sunshine_hour.apr %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">May:</strong>
-    <%= sunshine_hour.may %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Jun:</strong>
-    <%= sunshine_hour.jun %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Jul:</strong>
-    <%= sunshine_hour.jul %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Aug:</strong>
-    <%= sunshine_hour.aug %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Sep:</strong>
-    <%= sunshine_hour.sep %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Oct:</strong>
-    <%= sunshine_hour.oct %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Nov:</strong>
-    <%= sunshine_hour.nov %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Dec:</strong>
-    <%= sunshine_hour.dec %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Year:</strong>
-    <%= sunshine_hour.year %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Ref:</strong>
-    <%= sunshine_hour.ref %>
-  </p>
-
+  
+  
+  <% hours_array = [sunshine_hour.jan, sunshine_hour.feb, sunshine_hour.mar, sunshine_hour.apr, sunshine_hour.may, sunshine_hour.jun, sunshine_hour.jul, sunshine_hour.aug, sunshine_hour.sep, sunshine_hour.oct, sunshine_hour.nov, sunshine_hour.dec] %>
+  <% month_labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %>
+  <% dataset = { "label": "Monthly Sunshine Hours", "backgroundColor": "transparent", "borderColor": "#3B82F6", "data": hours_array } %>
+  <% data_value = { "labels": month_labels, "datasets": [dataset] }.to_json %>
+  <canvas data-controller="chart" data-chart-data-value="<%= data_value %>"></canvas>
+  
   <% if action_name != "show" %>
     <%= link_to "Show this sunshine hour", sunshine_hour, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to "Edit this sunshine hour", edit_sunshine_hour_path(sunshine_hour), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
